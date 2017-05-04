@@ -1,0 +1,89 @@
+void healthBar01(){
+        barr = createGraphics(300,50); //tamaño lienzo
+        barr.beginDraw();
+        barr.fill(255,0,0); //color de la figura
+        barr.noStroke();
+        barr.rect(0,0,300,50);
+        barr.endDraw();
+        image(barr,550,25); //coordenada.
+        
+        barv = createGraphics(300,50); //tamaño lienzo
+        barv.beginDraw();
+        barv.fill(0,255,0); //color de la figura
+        barv.noStroke();
+        barv.rect(0,0,240,50);
+        barv.endDraw();
+        image(barv,550,25); //coordenada.
+        }
+        
+void healthBar02(){
+        barr = createGraphics(300,50); //tamaño lienzo
+        barr.beginDraw();
+        barr.fill(255,0,0); //color de la figura
+        barr.noStroke();
+        barr.rect(0,0,300,50);
+        barr.endDraw();
+        image(barr,550,25); //coordenada.
+        
+        barv = createGraphics(300,50); //tamaño lienzo
+        barv.beginDraw();
+        barv.fill(0,255,0); //color de la figura
+        barv.noStroke();
+        barv.rect(0,0,160,50);
+        barv.endDraw();
+        image(barv,550,25); //coordenada.
+        }
+        
+void healthBar03(){
+        barr = createGraphics(300,50); //tamaño lienzo
+        barr.beginDraw();
+        barr.fill(255,0,0); //color de la figura
+        barr.noStroke();
+        barr.rect(0,0,300,50);
+        barr.endDraw();
+        image(barr,550,25); //coordenada.
+        
+        barv = createGraphics(300,50); //tamaño lienzo
+        barv.beginDraw();
+        barv.fill(0,255,0); //color de la figura
+        barv.noStroke();
+        barv.rect(0,0,60,50);
+        barv.endDraw();
+        image(barv,550,25); //coordenada.
+        }
+
+void healthBar04(){
+        barr = createGraphics(300,50); //tamaño lienzo
+        barr.beginDraw();
+        barr.fill(255,0,0); //color de la figura
+        barr.noStroke();
+        barr.rect(0,0,300,50);
+        barr.endDraw();
+        image(barr,550,25); //coordenada.
+        
+        barv = createGraphics(300,50); //tamaño lienzo
+        barv.beginDraw();
+        barv.fill(0,255,0); //color de la figura
+        barv.noStroke();
+        barv.rect(0,0,30,50);
+        barv.endDraw();
+        image(barv,550,25); //coordenada.
+        }
+        
+void healthBar05(){
+        barr = createGraphics(300,50); //tamaño lienzo
+        barr.beginDraw();
+        barr.fill(255,0,0); //color de la figura
+        barr.noStroke();
+        barr.rect(0,0,300,50);
+        barr.endDraw();
+        image(barr,550,25); //coordenada.
+        
+        //barv = createGraphics(300,50); //tamaño lienzo
+        //barv.beginDraw();
+        //barv.fill(0,255,0); //color de la figura
+        //barv.noStroke();
+        //barv.rect(0,0,120,50);
+        //barv.endDraw();
+        //image(barv,550,25); //coordenada.
+        }

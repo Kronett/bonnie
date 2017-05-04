@@ -1,0 +1,67 @@
+void act1(){
+    textSize(40);
+    text("*Bonnie esta moviendo la nariz.", 200, 500);
+    
+    bonnie.sprite1();
+    
+}
+
+void act2(){
+    textSize(40);
+    text("*Bonnie brica ansiosamente.", 200, 500);
+    
+    bonnie.sprite4();
+}
+
+void act3(){
+    textSize(40);
+    text("*Huele a zanahorias.", 200, 500);
+    bonnie.sprite4();
+}
+
+void act4(){
+    textSize(40);
+    text("*Huele a zanahorias.", 200, 500);
+    
+    bonnie.sprite1();
+}
+
+void act5(){
+    textSize(40);
+    text("*Bonnie se va saltando.", 200, 500);
+    
+    bonnie.sprite4();
+}
+
+void car01(){
+  textSize(40);
+  text("*Le haces señas a Bonnie para que se acerque.", 200, 500);
+  text("*No ocurre nada.", 200, 550);
+  bonnie.sprite1();
+}
+void car02(){
+  textSize(40);
+  text("*Pones tus manos arriba de tu cabeza como", 200, 500);
+  text("orejas y epiezas a dar saltos.", 200, 550);
+  text("*Capturaste la atencion de Bonnie.", 200, 600);
+  bonnie.sprite4();
+}
+void car03(){
+  textSize(40);
+  text("*De tu mochila sacas un plumon permanente", 200, 500);
+  text(" y te pintas bigotes en los cachetes.", 200, 550);
+  text("*Bonnie se sonroja.", 200, 600);
+  bonnie.sprite4();
+}
+void car04(){
+  textSize(40);
+  textSize(40);
+  text("*De tu mochila sacas una zanahoria.", 200, 500);
+  text("*Bonnie te mira con envidia.", 200, 550);
+  bonnie.sprite1();
+}
+void car05(){
+  textSize(40);
+  text("*Le das la zanahoria a Bonnie.", 200, 500);
+  bonnie.sprite3();
+}

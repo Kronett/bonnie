@@ -1,0 +1,65 @@
+void atk1(){
+    textSize(40);
+    text("*¿Qué no tienes corazon? Es un simple conejo.", 200, 500);
+    //text("-.-", 200, 550);
+    bonnie.sprite1();       
+    
+}
+
+void atk2(){
+    textSize(40);
+    text("*Bonnie esta sospechando que no eres buena", 200, 500);
+    text("persona.", 200, 550);
+    bonnie.sprite2();
+}
+
+void atk3(){
+    textSize(40);
+    text("*¿No te sientes mal?.", 200, 500);
+    text("*Bonnie no confía en ti.", 200, 550);
+    bonnie.sprite3();
+}
+
+void atk4(){
+    textSize(40);
+    text("*Bonnie te lanza un huevo de pascua. [Falló].", 200, 500);
+    text("*Bonnie no confía en ti.", 200, 550);
+    bonnie.sprite3();
+}
+
+void atk5(){
+    textSize(40);
+    text("*Bonnie ya no se mueve. ¿¡Qué has hecho!?.", 200, 500);
+    bonnie.sprite1();
+}
+
+void dam01(){
+  textSize(40);
+  text("*Le lanzas una piedra a Bonnie.", 200, 500);
+  healthBar01();
+  bonnie.cat1();
+}
+void dam02(){
+  textSize(40);
+  text("*Le lanzas otra piedra.", 200, 500);
+  healthBar02();
+  bonnie.cat1();
+}
+void dam03(){
+  textSize(40);
+  text("*Pobre conejito.", 200, 500);
+  healthBar03();
+  bonnie.cat1();
+}
+void dam04(){
+  textSize(40);
+  text("*Maldito desalmado.", 200, 500);
+  healthBar04();
+  bonnie.cat1();
+}
+void dam05(){
+  textSize(40);
+  text("*...", 200, 500);
+  healthBar05();
+  bonnie.cat1();
+}

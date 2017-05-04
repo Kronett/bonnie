@@ -1,0 +1,754 @@
+import ddf.minim.*;
+Minim cadena;
+AudioPlayer deter;
+AudioPlayer enemy;
+
+PGraphics pg, cora, barv, barr;
+personaje bonnie;
+personaje clyde;
+
+float X = 1200;
+float Y = 200;
+float i = 2;
+float j = 2;
+int XC, pos, camp, pan;
+
+void setup(){
+size(1400,750);
+bonnie = new personaje(250,20,0,0);
+clyde = new personaje(92,0,0,0);
+cadena = new Minim(this);
+deter = cadena.loadFile("deter.mp3");
+enemy = cadena.loadFile("enemy.mp3");
+}
+
+void draw(){
+    background(0);
+    corazon();
+    CPA();
+    
+    if (pan == 0){
+      PInicio();
+      deter.rewind();
+      deter.pause();
+      }
+    if (pan == 1){
+      HUD();
+      OP();
+      PEvento();
+      enemy.play();
+      }
+    if (pan == 2){
+      HUD();
+      dam01();
+      }
+    if (pan == 3){
+      HUD();
+      OP();
+      atk1();
+      }
+    if (pan == 4){
+      HUD();
+      dam02();
+      }
+    if (pan == 5){
+      HUD();
+      OP();
+      act2();
+      }
+    if (pan == 6){
+      HUD();
+      dam03();
+      }
+    if (pan == 7){
+      HUD();
+      OP();
+      atk3();
+      }
+    if (pan == 8){
+      HUD();
+      dam04();
+      }
+    if (pan == 9){
+      HUD();
+      OP();
+      atk4();
+      }
+    if (pan == 10){
+      HUD();
+      dam05();
+      }
+    if (pan == 11){
+      HUD();
+      atk5();
+      }
+    if (pan == 12){
+      HUD();
+      car01();
+      }
+    if (pan == 13){
+      HUD();
+      OP();
+      act1();
+      }
+    if (pan == 14){
+      HUD();
+      car02();
+      }
+    if (pan == 15){
+      HUD();
+      OP();
+      act2();
+      }
+    if (pan == 16){
+      HUD();
+      car03();
+      }
+    if (pan == 17){
+      HUD();
+      OP();
+      act3();
+      }
+    if (pan == 18){
+      HUD();
+      car04();
+      }
+    if (pan == 19){
+      HUD();
+      OP();
+      act4();
+      }
+    if (pan == 20){
+      HUD();
+      car05();
+      }
+    if (pan == 21){
+      HUD();
+      act5();
+      }
+    if (pan == 22){
+      HUD();
+      fle1();
+      }
+    if (pan == 23){
+      HUD();
+      fle2();
+      }
+    if (pan == 24){
+      HUD();
+      fle3();
+      }
+    if (pan == 25){
+      HUD();
+      fle4();
+      }
+    if (pan == 26){
+      HUD();
+      fle5();
+      }
+    if (pan == 27){
+     deter.play();
+     enemy.rewind();
+     enemy.pause();
+     GAME();
+      }
+}
+
+void mouseClicked() {
+  
+}
+
+void keyPressed() {
+  
+//Para pantalla.
+  if (keyPressed && pan == 0) {
+      if (key == 'z' || key == 'Z') {
+      camp = 1;
+      XC=235;
+      }
+      }
+  if(keyPressed && pan == 1){
+     if (key == 'z' && pos == 0){
+        camp = 2;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 12;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 22;
+        }
+        }
+        
+    if(keyPressed && pan == 3){
+     if (key == 'z' && pos == 0){
+        camp = 4;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 14;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 23;
+        }
+        }
+        
+    if(keyPressed && pan == 5){
+     if (key == 'z' && pos == 0){
+        camp = 6;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 16;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 23;
+        }
+        }
+        
+    if(keyPressed && pan == 7){
+     if (key == 'z' && pos == 0){
+        camp = 8;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 18;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 24;
+        }
+        }
+        
+    if(keyPressed && pan == 9){
+     if (key == 'z' && pos == 0){
+        camp = 10;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 20;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 24;
+        }
+        }
+        
+    if(keyPressed && pan == 11){
+     if (key == 'z' && pos == 0){
+        camp = 27;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 27;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 27;
+        }
+        }
+        
+    if(keyPressed && pan == 13){
+     if (key == 'z' && pos == 0){
+        camp = 4;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 14;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 25;
+        }
+        }
+              
+    if(keyPressed && pan == 15){
+     if (key == 'z' && pos == 0){
+        camp = 6;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 16;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 25;
+        }
+        }    
+        
+    if(keyPressed && pan == 17){
+     if (key == 'z' && pos == 0){
+        camp = 8;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 18;
+        }
+        if (key == 'z' && pos == 2){
+        camp = 26;
+        }
+        }
+     
+    if(keyPressed && pan == 19){
+     if (key == 'z' && pos == 0){
+        camp = 10;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 20;
+        }
+        if (key == 'z' && pos == 2){
+        camp = 26;
+        }
+        }
+        
+    if(keyPressed && pan == 21){
+     if (key == 'z' && pos == 0){
+        camp = 27;
+        }
+     if (key == 'z' && pos == 1){
+        camp = 27;
+        }
+     if (key == 'z' && pos == 2){
+        camp = 27;
+        }
+        }
+        
+  if(keyPressed && pan == 2){
+     if (key == 'z'){
+        camp = 3;
+        }
+        }
+  if(keyPressed && pan == 4){
+     if (key == 'z'){
+        camp = 5;
+        }
+        }
+  if(keyPressed && pan ==6){
+     if (key == 'z'){
+        camp = 7;
+        }
+        }
+  if(keyPressed && pan == 8){
+     if (key == 'z'){
+        camp = 9;
+        }
+        }
+  if(keyPressed && pan == 10){
+     if (key == 'z'){
+        camp = 11;
+        }
+        }
+  if(keyPressed && pan == 12){
+     if (key == 'z'){
+        camp = 13;
+        }
+        }
+  if(keyPressed && pan == 14){
+     if (key == 'z'){
+        camp = 15;
+        }
+        }
+  if(keyPressed && pan == 16){
+     if (key == 'z'){
+        camp = 17;
+        }
+        }
+  if(keyPressed && pan == 18){
+     if (key == 'z'){
+        camp = 19;
+        }
+        }
+  if(keyPressed && pan == 20){
+     if (key == 'z'){
+        camp = 21;
+        }
+        }
+   if(keyPressed && pan == 22){
+     if (key == 'z'){
+        camp = 27;
+        }
+        }
+  if(keyPressed && pan == 23){
+     if (key == 'z'){
+        camp = 3;
+        }
+        }
+  if(keyPressed && pan == 24){
+     if (key == 'z'){
+        camp = 9;
+        }
+        }
+  if(keyPressed && pan == 25){
+     if (key == 'z'){
+        camp = 13;
+        }
+        }
+  if(keyPressed && pan == 26){
+     if (key == 'z'){
+        camp = 17;
+        }
+        }
+   if(keyPressed && pan == 27){
+     if (key == 'z'){
+        camp = 0;
+        }
+        }
+  
+
+//Para corazon en pantalla 1.
+    if (key == CODED && pan == 1) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 3) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+       }
+    if (key == CODED && pan == 5) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 7) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 9) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 11) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 13) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 15) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 17) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 19) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+    if (key == CODED && pan == 21) {
+       if (keyCode == LEFT){
+       pos--;
+       }
+       if (keyCode == RIGHT){
+       pos++;       
+       }
+    }
+}
+
+
+  
+  class personaje{
+int HP;
+int ATK;
+int DEF;
+int VEL;
+
+
+
+
+
+personaje(int HP_, int ATK_, int DEF_, int VEL_){
+HP = HP_;
+ATK = ATK_;
+DEF = DEF_;
+VEL = VEL_;
+
+  }
+  
+void sprite1(){
+  
+  pg = createGraphics(325,450); //tamaño lienzo
+  pg.beginDraw();
+  pg.fill(255); //color de la figura
+  pg.noStroke();
+  pg.rect(125,0,50,25);
+  pg.rect(25,25,50,25);
+  pg.rect(100,25,25,75);
+  pg.rect(175,25,25,25);
+  pg.rect(0,50,25,75);
+  pg.rect(75,50,25,25);
+  pg.rect(200,50,25,50);
+  pg.rect(125,100,25,25);
+  pg.rect(225,100,25,50);
+  pg.rect(25,125,25,25);
+  pg.rect(150,125,25,25);
+  pg.rect(50,150,25,25);
+  pg.rect(250,150,25,25);
+  pg.rect(75,175,25,25);
+  pg.rect(275,175,25,25);
+  pg.rect(50,200,25,75);
+  pg.rect(250,200,25,50);
+  pg.rect(300,200,25,75);
+  pg.rect(150,225,25,50);
+  pg.rect(225,250,25,25); //Nariz
+  pg.rect(275,175,25,25);
+  pg.rect(75,275,25,25);
+  pg.rect(275,275,25,75);
+  pg.rect(25,300,25,25);
+  pg.rect(75,300,75,25);
+  pg.rect(225,300,75,25);
+  pg.rect(0,325,25,25);
+  pg.rect(50,325,25,100);
+  pg.rect(225,325,25,25);
+  pg.rect(25,350,25,25);
+  pg.rect(175,350,100,25);
+  pg.rect(200,375,25,25);
+  pg.rect(250,375,25,25);
+  pg.rect(200,400,50,25);
+  pg.rect(75,425,125,25);
+  scale(.5);
+  pg.endDraw();
+  
+  
+  image(pg,1200,200); //coordenada de la figura 1 pg
+
+}
+
+void sprite2(){
+  
+  
+  pg = createGraphics(325,450); //tamaño lienzo
+  pg.beginDraw();
+  pg.fill(255); //color de la figura
+  pg.noStroke();
+  pg.rect(125,0,50,25);
+  pg.rect(25,25,50,25);
+  pg.rect(100,25,25,75);
+  pg.rect(175,25,25,25);
+  pg.rect(0,50,25,75);
+  pg.rect(75,50,25,25);
+  pg.rect(200,50,25,50);
+  pg.rect(125,100,25,25);
+  pg.rect(225,100,25,50);
+  pg.rect(25,125,25,25);
+  pg.rect(150,125,25,25);
+  pg.rect(50,150,25,25);
+  pg.rect(250,150,25,25);
+  pg.rect(75,175,25,25);
+  pg.rect(275,175,25,25);
+  pg.rect(50,200,25,75);
+  pg.rect(250,200,25,50);
+  pg.rect(300,200,25,75);
+  pg.rect(150,225,25,50);
+  pg.rect(225,250,25,25); //Nariz
+  pg.rect(275,175,25,25);
+  pg.rect(75,275,25,25);
+  pg.rect(275,275,25,75);
+  pg.rect(25,300,25,25);
+  pg.rect(75,300,75,25);
+  pg.rect(225,300,75,25);
+  pg.rect(0,325,25,25);
+  pg.rect(50,325,25,100);
+  pg.rect(225,325,25,25);
+  pg.rect(25,350,25,25);
+  pg.rect(175,350,100,25);
+  pg.rect(200,375,25,25);
+  pg.rect(250,375,25,25);
+  pg.rect(200,400,50,25);
+  pg.rect(75,425,125,25);
+  scale(.5);
+  pg.endDraw();
+  
+  
+  image(pg,X,200); //coordenada de la figura 1 pg
+   
+    i = i+.05;
+    X = 1200 + 100*sin(i);
+ 
+  }
+  
+ void cat1(){
+  pg = createGraphics(325,450); //tamaño lienzo
+  pg.beginDraw();
+  pg.fill(255); //color de la figura
+  pg.noStroke();
+  pg.rect(125,0,50,25);
+  pg.rect(25,25,50,25);
+  pg.rect(100,25,25,75);
+  pg.rect(175,25,25,25);
+  pg.rect(0,50,25,75);
+  pg.rect(75,50,25,25);
+  pg.rect(200,50,25,50);
+  pg.rect(125,100,25,25);
+  pg.rect(225,100,25,50);
+  pg.rect(25,125,25,25);
+  pg.rect(150,125,25,25);
+  pg.rect(50,150,25,25);
+  pg.rect(250,150,25,25);
+  pg.rect(75,175,25,25);
+  pg.rect(275,175,25,25);
+  pg.rect(50,200,25,75);
+  pg.rect(250,200,25,50);
+  pg.rect(300,200,25,75);
+  pg.rect(150,225,25,50);
+  pg.rect(225,250,25,25); //Nariz
+  pg.rect(275,175,25,25);
+  pg.rect(75,275,25,25);
+  pg.rect(275,275,25,75);
+  pg.rect(25,300,25,25);
+  pg.rect(75,300,75,25);
+  pg.rect(225,300,75,25);
+  pg.rect(0,325,25,25);
+  pg.rect(50,325,25,100);
+  pg.rect(225,325,25,25);
+  pg.rect(25,350,25,25);
+  pg.rect(175,350,100,25);
+  pg.rect(200,375,25,25);
+  pg.rect(250,375,25,25);
+  pg.rect(200,400,50,25);
+  pg.rect(75,425,125,25);
+  scale(.5);
+  pg.endDraw();
+  
+  
+  image(pg,X,200); //coordenada de la figura 1 pg
+   
+    i = i+.5;
+    X = 1200 + 100*sin(i);
+   
+  
+}
+
+void sprite3(){
+  pg = createGraphics(325,450); //tamaño lienzo
+  pg.beginDraw();
+  pg.fill(255); //color de la figura
+  pg.noStroke();
+  pg.rect(125,0,50,25);
+  pg.rect(25,25,50,25);
+  pg.rect(100,25,25,75);
+  pg.rect(175,25,25,25);
+  pg.rect(0,50,25,75);
+  pg.rect(75,50,25,25);
+  pg.rect(200,50,25,50);
+  pg.rect(125,100,25,25);
+  pg.rect(225,100,25,50);
+  pg.rect(25,125,25,25);
+  pg.rect(150,125,25,25);
+  pg.rect(50,150,25,25);
+  pg.rect(250,150,25,25);
+  pg.rect(75,175,25,25);
+  pg.rect(275,175,25,25);
+  pg.rect(50,200,25,75);
+  pg.rect(250,200,25,50);
+  pg.rect(300,200,25,75);
+  pg.rect(150,225,25,50);
+  pg.rect(225,250,25,25); //Nariz
+  pg.rect(275,175,25,25);
+  pg.rect(75,275,25,25);
+  pg.rect(275,275,25,75);
+  pg.rect(25,300,25,25);
+  pg.rect(75,300,75,25);
+  pg.rect(225,300,75,25);
+  pg.rect(0,325,25,25);
+  pg.rect(50,325,25,100);
+  pg.rect(225,325,25,25);
+  pg.rect(25,350,25,25);
+  pg.rect(175,350,100,25);
+  pg.rect(200,375,25,25);
+  pg.rect(250,375,25,25);
+  pg.rect(200,400,50,25);
+  pg.rect(75,425,125,25);
+  scale(.5);
+  pg.endDraw();
+  
+  
+  image(pg,X,Y); //coordenada de la figura 1 pg
+   
+    i = i+.05;
+    j = j+.07;
+    X = 1200 + 500*sin(i);
+    Y = 200 + 100*sin(j);
+  
+}
+
+void sprite4(){
+  pg = createGraphics(325,450); //tamaño lienzo
+  pg.beginDraw();
+  pg.fill(255); //color de la figura
+  pg.noStroke();
+  pg.rect(125,0,50,25);
+  pg.rect(25,25,50,25);
+  pg.rect(100,25,25,75);
+  pg.rect(175,25,25,25);
+  pg.rect(0,50,25,75);
+  pg.rect(75,50,25,25);
+  pg.rect(200,50,25,50);
+  pg.rect(125,100,25,25);
+  pg.rect(225,100,25,50);
+  pg.rect(25,125,25,25);
+  pg.rect(150,125,25,25);
+  pg.rect(50,150,25,25);
+  pg.rect(250,150,25,25);
+  pg.rect(75,175,25,25);
+  pg.rect(275,175,25,25);
+  pg.rect(50,200,25,75);
+  pg.rect(250,200,25,50);
+  pg.rect(300,200,25,75);
+  pg.rect(150,225,25,50);
+  pg.rect(225,250,25,25); //Nariz
+  pg.rect(275,175,25,25);
+  pg.rect(75,275,25,25);
+  pg.rect(275,275,25,75);
+  pg.rect(25,300,25,25);
+  pg.rect(75,300,75,25);
+  pg.rect(225,300,75,25);
+  pg.rect(0,325,25,25);
+  pg.rect(50,325,25,100);
+  pg.rect(225,325,25,25);
+  pg.rect(25,350,25,25);
+  pg.rect(175,350,100,25);
+  pg.rect(200,375,25,25);
+  pg.rect(250,375,25,25);
+  pg.rect(200,400,50,25);
+  pg.rect(75,425,125,25);
+  scale(.5);
+  pg.endDraw();
+  
+  
+  image(pg,X,Y); //coordenada de la figura 1 pg
+   
+    //i = i+.05;
+    j = j+.07;
+    //X = 1200 + 500*sin(i);
+    Y = 200 + 100*sin(j);
+  
+}
+}

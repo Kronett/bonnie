@@ -1,0 +1,34 @@
+void corazon(){
+  
+        cora = createGraphics(50,50); //tamaño lienzo
+        cora.beginDraw();
+        cora.fill(255,0,0); //color de la figura
+        cora.noStroke();
+        cora.ellipseMode(CENTER);
+        cora.ellipse(25,25,25,25);
+        cora.endDraw();
+    
+    if (pan == 0){
+        image(cora,535,663); //coordenada.
+        }
+    if (pan == 1 || pan == 3 || pan == 5 || pan == 7 || pan == 9 || pan == 13 || pan == 15 || pan == 17 || pan == 19 ) {
+        image(cora,XC,688); //coordenada.    
+        }
+        
+    if (pos == 4){
+      pos=0;
+      }
+    if (pos == -1){
+      pos=3;
+      }
+    
+    if (pos == 0){
+      XC=235;
+      }
+    if (pos == 1){
+      XC=565;
+      }
+    if (pos == 2){
+      XC=890;
+      }
+}

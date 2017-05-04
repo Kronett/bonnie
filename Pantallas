@@ -1,0 +1,69 @@
+void PEvento(){
+    text("*¡Enemigo especial Bonnie entra saltando para", 200, 500);
+    text("  derrotarte!", 200, 550);
+    bonnie.sprite1();
+}
+  
+void PInicio(){
+    textSize(40);
+    text("Z ---------------> Si.", 400, 200);
+    text("X ---------------> No.", 400, 300);
+    text("Flechas ----------> Movimiento.", 400, 400);
+    text("¡Empezar!", 600, 700);
+   
+}
+
+void HUD(){    
+    noStroke();
+    rect(180, 450, 975, 10);
+    rect(180, 650, 975, 10);
+    rect(180, 450, 10, 200);
+    rect(1145, 450, 10, 200);
+}
+
+void OP(){
+    textSize(40);
+    text("Luchar", 300, 725);
+    textSize(40);
+    text("Actuar", 625, 725);
+    textSize(40);
+    text("Huir", 950, 725);
+}
+
+void fle1(){
+    textSize(40);
+    text("*Escapaste sin problema.", 200, 500);
+    bonnie.sprite1();       
+    
+}
+
+void fle2(){
+    textSize(40);
+    text("*Ya no puedes dejar las cosas así.", 200, 500);
+    bonnie.sprite2();
+}
+
+void fle3(){
+    textSize(40);
+    text("*Enfrenta tus responsabilidades.", 200, 500);
+    bonnie.sprite2();
+}
+
+void fle4(){
+    textSize(40);
+    text("*No puedes escapar, ya estas comprometido.", 200, 500);
+    bonnie.sprite2();
+}
+
+void fle5(){
+    textSize(40);
+    text("*Es imposible apartar la vista de Bonnie.", 200, 500);
+    text("Demasiado tierno.", 200, 550);
+    bonnie.sprite1();
+}
+
+void GAME(){
+    textSize(160);
+    text("GAME", 450, 300);
+    text("OVER", 450, 500);
+}

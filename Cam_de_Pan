@@ -1,0 +1,87 @@
+void CPA(){
+      
+  if (camp == 0){    //Instrucciones.
+      pan = 0;
+      }
+  if (camp == 1){    //Evento.
+      pan = 1;
+      }
+  if (camp == 2){    //dam01
+      pan = 2;
+      }
+  if (camp == 3){    //atk1
+      pan = 3;     
+      }
+  if (camp == 4){    //dam02
+      pan = 4;
+      }
+  if (camp == 5){    //atk2
+      pan = 5;
+      }
+  if (camp == 6){    //dam03
+      pan = 6;
+      }
+  if (camp == 7){    //atk3
+      pan = 7;
+      }
+  if (camp == 8){    //dam04
+      pan = 8;
+      }
+  if (camp == 9){    //atk4
+      pan = 9;
+      }
+  if (camp == 10){   //dam05
+      pan = 10;
+      }
+  if (camp == 11){   //atk5
+      pan = 11;
+      }
+  if (camp == 12){   //car01
+      pan = 12;
+      }
+  if (camp == 13){   //act1
+      pan = 13;
+      }
+  if (camp == 14){   //car02
+      pan = 14;
+      }
+  if (camp == 15){   //act2
+      pan = 15;
+      }
+  if (camp == 16){   //car03
+      pan = 16;
+      }
+  if (camp == 17){   //act3
+      pan = 17;
+      }
+  if (camp == 18){   //car04
+      pan = 18;
+      }
+  if (camp == 19){   //act4
+      pan = 19;
+      }
+  if (camp == 20){   //car05
+      pan = 20;
+      }
+  if (camp == 21){   //act5
+      pan = 21;
+      }
+  if (camp == 22){   //fle1
+      pan = 22;
+      }
+  if (camp == 23){   //fle2
+      pan = 23;
+      }
+  if (camp == 24){   //fle3
+      pan = 24;
+      }
+  if (camp == 25){   //fle4
+      pan = 25;
+      }
+  if (camp == 26){   //fle5
+      pan = 26;
+      }
+  if (camp == 27){   //GAME
+      pan = 27;
+      }
+}
